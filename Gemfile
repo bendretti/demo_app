@@ -37,11 +37,9 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-group :production, :staging do
-	gem 'pg'
-end
-
-group :development, :test do
-	gem "sqlite3", :require => "sqlite3"
+gem 'sqlite3', :group => [:development, :test]
+group :production do
+  gem 'thin'
+  gem 'pg'
 end
 
